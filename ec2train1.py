@@ -131,8 +131,8 @@ def create_data_loaders(data, batch_size):
     
     return train_data_loader, test_data_loader, validation_data_loader
 
-batch_size=2
-learning_rate=1e-4
+batch_size=32
+learning_rate=0.0022015561158162385
 train_loader, test_loader, validation_loader=create_data_loaders('dogImages',batch_size)
 model=net()
 
@@ -143,4 +143,3 @@ logger.info("Starting Model Training")
 model=train(model, train_loader, validation_loader, criterion, optimizer)
 torch.save(model.state_dict(), 'TrainedModels/model.pth')
 print('saved')
-
